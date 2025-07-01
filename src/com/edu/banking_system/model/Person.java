@@ -10,8 +10,6 @@ public abstract class Person implements Serializable {
 	private String email;
 
 	public Person() {
-		this.name = "";
-		this.email = "";
 	}
 
 	public Person(String name, String email) {
