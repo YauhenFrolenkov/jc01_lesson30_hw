@@ -4,7 +4,6 @@ public class Manager extends Person{
 	private static final long serialVersionUID = 1L;
 	
 	public Manager() {
-        super();
     }
 
     public Manager(String name, String email) {
