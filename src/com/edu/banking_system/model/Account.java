@@ -7,16 +7,12 @@ import java.util.Objects;
 public class Account implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private final String id;
-	private final Client owner;
-	private final LocalDate creationDate;
+	private String id;
+	private Client owner;
+	private LocalDate creationDate;
 	private double balance;
 
 	public Account() {
-		this.id = "";
-		this.owner = new Client();
-		this.creationDate = LocalDate.now();
-		this.balance = 0.0;
 	}
 
 	public Account(String id, Client owner) {
@@ -47,6 +43,27 @@ public class Account implements Serializable {
 
 	public double getBalance() {
 		return balance;
+	}
+	
+	public final void setId(String id) {
+		if (this.id != null) {
+			throw new IllegalStateException("ID is already set");
+		}
+		this.id = id;
+	}
+
+	public final void setOwner(Client owner) {
+		if (this.owner != null) {
+			throw new IllegalStateException("Owner is already set");
+		}
+		this.owner = owner;
+	}
+
+	public final void setCreationDate(LocalDate creationDate) {
+		if (this.creationDate != null) {
+			throw new IllegalStateException("CreationDate is already set");
+		}
+		this.creationDate = creationDate;
 	}
 	
 	public void setBalance(double balance) {
